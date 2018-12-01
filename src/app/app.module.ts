@@ -9,11 +9,28 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AccesosRapidosPage } from '../pages/accesos-rapidos/accesos-rapidos';
+import { AyudaMedicaPage } from '../pages/ayuda-medica/ayuda-medica';
+import { NotaPage } from '../pages/nota/nota';
+import { NotasPage } from '../pages/notas/notas';
+import { RemedioPage } from '../pages/remedio/remedio';
+import { RemediosPage } from '../pages/remedios/remedios';
+import { UsuarioPage } from '../pages/usuario/usuario';
+import { UsuariosPage } from '../pages/usuarios/usuarios';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AccesosRapidosPage,
+    AyudaMedicaPage,
+    NotaPage,
+    NotasPage,
+    RemedioPage,
+    RemediosPage,
+    UsuarioPage,
+    UsuariosPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +40,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AccesosRapidosPage,
+    AyudaMedicaPage,
+    NotaPage,
+    NotasPage,
+    RemedioPage,
+    RemediosPage,
+    UsuarioPage,
+    UsuariosPage
   ],
   providers: [
     StatusBar,
