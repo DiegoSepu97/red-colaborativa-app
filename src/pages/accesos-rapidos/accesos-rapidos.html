@@ -5,14 +5,47 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>accesosRapidos</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Accesos Rápidos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    
+    <ion-card>
+      <ion-card-header text-center>
+        Servicio de Urgencia X
+      </ion-card-header>
+      <ion-card-content text-center>
+        Hospital Dr. Luis Calvo Mackenna 
+        <br>
+        Antonio Varas #360
+        <br>
+        <button ion-button icon-start>
+          <ion-icon name="md-call"></ion-icon>
+          Llamar
+        </button>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-card>
+        <ion-card-header text-center>
+          Geriatra a domicilio
+        </ion-card-header>
+        <ion-card-content text-center>
+          John Doe 
+          <br>
+          Horario: 10:00 - 14:00
+          <br>
+          <button ion-button icon-start>
+            <ion-icon name="md-call"></ion-icon>
+            Llamar
+          </button>
+        </ion-card-content>
+      </ion-card>
 </ion-content>

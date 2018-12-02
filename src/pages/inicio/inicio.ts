@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the RemediosPage page.
+ * Generated class for the InicioPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,22 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-remedios',
-  templateUrl: 'remedios.html',
+  selector: 'page-inicio',
+  templateUrl: 'inicio.html',
 })
-export class RemediosPage {
-
-
-  remedios : Array<String>;
+export class InicioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.remedios = ["Ibuprofeno", "Paracetamol", "Cardioaspirina", "Té de Manzanilla"];
-
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RemediosPage');
+    console.log('ionViewDidLoad InicioPage');
   }
 
 }

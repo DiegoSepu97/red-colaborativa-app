@@ -1,3 +1,18 @@
-page-notas {
+.warn {
+    background-color: rgb(255, 207, 86);
+}
 
+.dang {
+    background-color: rgb(255, 86, 94);
+}
+
+.info {
+    background-color: rgb(86, 255, 94);
+}
+ion-card-header {
+    font-weight: bold;
+}
+
+ion-content {
+    padding-bottom: 100px;
 }

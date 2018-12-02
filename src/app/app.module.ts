@@ -17,6 +17,8 @@ import { RemedioPage } from '../pages/remedio/remedio';
 import { RemediosPage } from '../pages/remedios/remedios';
 import { UsuarioPage } from '../pages/usuario/usuario';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
+import { FooterComponent } from '../components/footer/footer';
+import { InicioPage } from '../pages/inicio/inicio';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UsuariosPage } from '../pages/usuarios/usuarios';
     RemedioPage,
     RemediosPage,
     UsuarioPage,
-    UsuariosPage
+    UsuariosPage,
+    InicioPage,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { UsuariosPage } from '../pages/usuarios/usuarios';
     RemedioPage,
     RemediosPage,
     UsuarioPage,
+    InicioPage,
     UsuariosPage
   ],
   providers: [

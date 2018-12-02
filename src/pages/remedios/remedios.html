@@ -15,6 +15,25 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding >
+
+  <ion-grid>
+    <ion-row align-items-center *ngFor="let remedio of remedios" class="filaremedios">
+      <ion-col text-center>
+        <div class="remedio">{{ remedio }}</div>
+      </ion-col>
+      <ion-col text-center>
+        Dolor de Cabeza
+      </ion-col>
+      <ion-col text-center>
+        Después de cada comida
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 
 </ion-content>
+
+<ion-footer>
+  <my-footer></my-footer>
+</ion-footer>
