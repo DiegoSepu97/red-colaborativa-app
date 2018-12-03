@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { map } from 'rxjs/operators';
 
 /**
  * Generated class for the AyudaMedicaPage page.
@@ -15,11 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AyudaMedicaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  url : string; 
+  info: any; 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
+    
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AyudaMedicaPage');
   }
-
 }
