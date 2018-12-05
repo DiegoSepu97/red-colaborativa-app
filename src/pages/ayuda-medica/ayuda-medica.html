@@ -13,20 +13,21 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-    <ion-slides pager>
-      <ion-slide>
-        <ion-icon></ion-icon>
-      </ion-slide>
-      <ion-slide>
-        <h2>Slide 2</h2>
-      </ion-slide>
-      <ion-slide>
-        <h2>Slide 3</h2>
-      </ion-slide>
-    
-    </ion-slides>
+    <ion-list>
+      <button ion-item (click)="abrirArticulo()">
+        <ion-icon name="md-call" item-start></ion-icon>
+        <div class="item-note" item-end>Probando</div>
+      </button>
+      <button ion-item (click)="abrirArticulo()">
+        <ion-icon name="md-call" item-start></ion-icon>
+        <div class="item-note" item-end>Probando</div>
+      </button>
+      <button ion-item (click)="abrirArticulo()">
+          <ion-icon name="md-call" item-start></ion-icon>
+          <div class="item-note" item-end>Probando</div>
+        </button>
+    </ion-list>
 </ion-content>
 
 <ion-footer>

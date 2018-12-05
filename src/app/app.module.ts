@@ -20,6 +20,7 @@ import { UsuarioPage } from '../pages/usuario/usuario';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { FooterComponent } from '../components/footer/footer';
 import { InicioPage } from '../pages/inicio/inicio';
+import { ArticuloPage } from '../pages/articulo/articulo';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InicioPage } from '../pages/inicio/inicio';
     UsuarioPage,
     UsuariosPage,
     InicioPage,
-    FooterComponent
+    FooterComponent,
+    ArticuloPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { InicioPage } from '../pages/inicio/inicio';
     RemediosPage,
     UsuarioPage,
     InicioPage,
-    UsuariosPage
+    UsuariosPage,
+    ArticuloPage
   ],
   providers: [
     StatusBar,

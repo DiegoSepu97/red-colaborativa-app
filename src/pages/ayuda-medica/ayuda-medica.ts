@@ -2,13 +2,8 @@ import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { map } from 'rxjs/operators';
+import { ArticuloPage } from '../articulo/articulo';
 
-/**
- * Generated class for the AyudaMedicaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -25,5 +20,9 @@ export class AyudaMedicaPage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AyudaMedicaPage');
+  }
+
+  abrirArticulo() {
+    this.navCtrl.push(ArticuloPage);
   }
 }
