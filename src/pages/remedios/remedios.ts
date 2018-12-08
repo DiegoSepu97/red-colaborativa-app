@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RemediosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { DependienteServiceProvider } from '../../providers/dependiente-service/dependiente-service';
 
 @IonicPage()
 @Component({
@@ -15,12 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RemediosPage {
 
+  remedios : string[] = new Array;
 
-  remedios : Array<String>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.remedios = ["Ibuprofeno", "Paracetamol", "Cardioaspirina", "Té de Manzanilla"];
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _dependienteService: DependienteServiceProvider) {
+    this._dependienteService.getInfoDependiente().subscribe(async data => {
+      const info = await data.dependiente;
+      info.medicinas.forEach(medicina => {
+        this.remedios.push(medicina);
+      });
+    })
 
   }
 

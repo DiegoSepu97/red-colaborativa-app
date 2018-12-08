@@ -23,7 +23,6 @@ export class ArticuloPage {
         if(categorias.has(this.categoria))
           this.articulosdif.push(articulos[index]);
       };
-      console.log(this.articulosdif);
     });
   }
 

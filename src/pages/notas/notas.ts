@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the NotasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { DependienteServiceProvider } from '../../providers/dependiente-service/dependiente-service';
 
 @IonicPage()
 @Component({
@@ -15,7 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NotasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  notas: any[] = new Array;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _dependienteService: DependienteServiceProvider) {
+    this._dependienteService.getInfoDependiente().subscribe(async data => {
+      const info = await data.dependiente;
+      info.notas.forEach(nota => {
+        this.notas.push(nota);  
+      });
+    });
   }
 
   ionViewDidLoad() {

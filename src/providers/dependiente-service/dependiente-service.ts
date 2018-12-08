@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class ArticulosServiceProvider {
+export class DependienteServiceProvider {
 
   constructor(public http: Http) {
 
@@ -11,9 +11,10 @@ export class ArticulosServiceProvider {
 
   }
 
-  public obtenerArticulos() {
-    return this.http.get("https://proyecto-is-alpha-0-1.herokuapp.com/articulos").pipe(map(res => {
+  public getInfoDependiente() {
+    return this.http.get("https://proyecto-is-alpha-0-1.herokuapp.com/dependientes?id=5c052a3aecc1e412c432fa2e").pipe(map(res => {
       return res.json();
     }))
   }
+
 }

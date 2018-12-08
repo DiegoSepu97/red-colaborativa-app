@@ -22,6 +22,7 @@ import { FooterComponent } from '../components/footer/footer';
 import { InicioPage } from '../pages/inicio/inicio';
 import { ArticuloPage } from '../pages/articulo/articulo';
 import { ArticulosServiceProvider } from '../providers/articulos-service/articulos-service';
+import { DependienteServiceProvider } from '../providers/dependiente-service/dependiente-service';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ArticulosServiceProvider } from '../providers/articulos-service/articul
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ArticulosServiceProvider
+    ArticulosServiceProvider,
+    DependienteServiceProvider
   ]
 })
 export class AppModule {}
