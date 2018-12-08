@@ -21,6 +21,7 @@ import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { FooterComponent } from '../components/footer/footer';
 import { InicioPage } from '../pages/inicio/inicio';
 import { ArticuloPage } from '../pages/articulo/articulo';
+import { ArticulosServiceProvider } from '../providers/articulos-service/articulos-service';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ArticuloPage } from '../pages/articulo/articulo';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ArticulosServiceProvider
   ]
 })
 export class AppModule {}
