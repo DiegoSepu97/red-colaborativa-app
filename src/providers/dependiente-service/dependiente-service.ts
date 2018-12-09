@@ -12,7 +12,7 @@ export class DependienteServiceProvider {
   }
 
   public getInfoDependiente() {
-    return this.http.get("https://proyecto-is-alpha-0-1.herokuapp.com/dependientes?id=5c052a3aecc1e412c432fa2e").pipe(map(res => {
+    return this.http.get("https://proyecto-is-alpha-0-1.herokuapp.com/dependientes?id=5c052b003ccdf213a05fa812").pipe(map(res => {
       return res.json();
     }))
   }

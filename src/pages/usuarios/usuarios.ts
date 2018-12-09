@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the UsuariosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { DependienteServiceProvider } from '../../providers/dependiente-service/dependiente-service';
 
 @IonicPage()
 @Component({
@@ -15,7 +9,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UsuariosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  apoderado: any;
+  cuidadores: any[] = new Array;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _dependienteService: DependienteServiceProvider) {
+    this._dependienteService.getInfoDependiente().subscribe(data => {
+      const info = data.dependiente;
+      this.apoderado = info.apoderado;
+      info.cuidadores.forEach(cuidador => {
+        this.cuidadores.push(cuidador);
+      });
+    });
   }
 
   ionViewDidLoad() {

@@ -23,6 +23,7 @@ import { InicioPage } from '../pages/inicio/inicio';
 import { ArticuloPage } from '../pages/articulo/articulo';
 import { ArticulosServiceProvider } from '../providers/articulos-service/articulos-service';
 import { DependienteServiceProvider } from '../providers/dependiente-service/dependiente-service';
+import { EventosPage } from '../pages/eventos/eventos';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DependienteServiceProvider } from '../providers/dependiente-service/dep
     UsuariosPage,
     InicioPage,
     FooterComponent,
-    ArticuloPage
+    ArticuloPage,
+    EventosPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { DependienteServiceProvider } from '../providers/dependiente-service/dep
     UsuarioPage,
     InicioPage,
     UsuariosPage,
-    ArticuloPage
+    ArticuloPage,
+    EventosPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        <ion-title>Eventos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let evento of eventos">
+        <ion-card-header text-center style="white-space: normal"> {{ evento?.titulo }} </ion-card-header>
+        <ion-card-content>
+            {{ evento?.descripcion }}
+            <br><br>
+            <small> {{ evento.autor.nombre + " " + evento?.autor.apellido }} </small>
+            <br>
+            <small float-right> {{ evento?.stamp_agregado | date }} </small>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+    <my-footer></my-footer>
+</ion-footer>

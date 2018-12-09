@@ -9,6 +9,7 @@ import { NotasPage } from '../pages/notas/notas';
 import { RemediosPage } from '../pages/remedios/remedios';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { InicioPage } from '../pages/inicio/inicio';
+import { EventosPage } from '../pages/eventos/eventos';
 
 
 @Component({
@@ -28,6 +29,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: InicioPage },
       { title: 'Notas', component: NotasPage },
+      { title: 'Eventos', component: EventosPage },
       { title: 'Remedios', component: RemediosPage },
       { title: 'Ayuda Médica', component: AyudaMedicaPage },
       { title: 'Usuarios', component: UsuariosPage }
