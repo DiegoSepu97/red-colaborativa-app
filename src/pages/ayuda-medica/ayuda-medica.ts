@@ -16,9 +16,10 @@ export class AyudaMedicaPage {
   articulos: any[];
   categorias = new Set();
   categoria: string;
+  id: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private _articulosService: ArticulosServiceProvider) {
-    
+    this.id = navParams.get('id');
     this._articulosService.obtenerArticulos().subscribe(async data => {
       const info = await data;
       this.articulos = info.articulos;

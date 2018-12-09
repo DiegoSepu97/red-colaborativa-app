@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the InicioPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { UsuarioServiceProvider } from '../../providers/usuario-service/usuario-service';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InicioPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  id: string;
+  nombre: string = "";
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _usuarioService: UsuarioServiceProvider, private alertCtrl: AlertController) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InicioPage');
   }
 
+  public cambiaUsuario(uid: string) {  //Eliminable
+    this.id = uid;
+    this.set_id(uid);
+    this._usuarioService.getUser(uid).subscribe(async data => {
+      const info = await data.usuario;
+      this.nombre = info.nombre + " " + info.apellido;
+      let alert = this.alertCtrl.create({
+        title: 'Nuevo Usuario!',
+        subTitle: this.nombre + " " + this.id, 
+        buttons: ['Aceptar']
+      });
+      alert.present();
+    });
+  }
+
+  private set_id(nuevaid) {
+    this._usuarioService.setId(nuevaid);
+    this.id = nuevaid;
+  }
 }

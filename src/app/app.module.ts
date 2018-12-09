@@ -24,6 +24,7 @@ import { ArticuloPage } from '../pages/articulo/articulo';
 import { ArticulosServiceProvider } from '../providers/articulos-service/articulos-service';
 import { DependienteServiceProvider } from '../providers/dependiente-service/dependiente-service';
 import { EventosPage } from '../pages/eventos/eventos';
+import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { EventosPage } from '../pages/eventos/eventos';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ArticulosServiceProvider,
-    DependienteServiceProvider
+    DependienteServiceProvider,
+    UsuarioServiceProvider
   ]
 })
 export class AppModule {}
