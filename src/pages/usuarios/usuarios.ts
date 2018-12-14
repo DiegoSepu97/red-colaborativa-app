@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { DependienteServiceProvider } from '../../providers/dependiente-service/dependiente-service';
 import { UsuarioServiceProvider } from '../../providers/usuario-service/usuario-service';
 
-@IonicPage()
 @Component({
   selector: 'page-usuarios',
   templateUrl: 'usuarios.html',

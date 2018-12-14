@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { map } from 'rxjs/operators';
+import { NavController, NavParams } from 'ionic-angular';
 import { ArticuloPage } from '../articulo/articulo';
 import { ArticulosServiceProvider } from '../../providers/articulos-service/articulos-service'
 
-
-@IonicPage()
 @Component({
   selector: 'page-ayuda-medica',
   templateUrl: 'ayuda-medica.html',

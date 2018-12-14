@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {ArticulosServiceProvider} from '../../providers/articulos-service/articulos-service'
 
-@IonicPage()
 @Component({
   selector: 'page-articulo',
   templateUrl: 'articulo.html',

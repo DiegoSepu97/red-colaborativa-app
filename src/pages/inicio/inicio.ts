@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { UsuarioServiceProvider } from '../../providers/usuario-service/usuario-service';
 
-@IonicPage()
 @Component({
   selector: 'page-inicio',
   templateUrl: 'inicio.html',

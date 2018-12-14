@@ -4,8 +4,6 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,8 +27,6 @@ import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-ser
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
     AccesosRapidosPage,
     AyudaMedicaPage,
     NotaPage,
@@ -52,8 +48,6 @@ import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-ser
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
     AccesosRapidosPage,
     AyudaMedicaPage,
     NotaPage,
