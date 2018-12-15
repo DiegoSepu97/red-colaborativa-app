@@ -1,7 +1,6 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { UsuarioServiceProvider } from '../usuario-service/usuario-service';
 
 @Injectable()
 export class DependienteServiceProvider {

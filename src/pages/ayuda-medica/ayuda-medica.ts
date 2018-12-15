@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { ArticuloPage } from '../articulo/articulo';
 import { ArticulosServiceProvider } from '../../providers/articulos-service/articulos-service'
@@ -15,7 +14,7 @@ export class AyudaMedicaPage {
   categoria: string;
   id: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private _articulosService: ArticulosServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _articulosService: ArticulosServiceProvider) {
     this.id = navParams.get('id');
     this._articulosService.obtenerArticulos().subscribe(async data => {
       const info = await data;
