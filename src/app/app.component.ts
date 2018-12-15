@@ -25,6 +25,8 @@ export class MyApp {
 
   user_id: string;
 
+  nombre_usuario: string;
+
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private _usuarioService: UsuarioServiceProvider) {
     this.initializeApp();
 
@@ -37,6 +39,13 @@ export class MyApp {
       { title: 'Ayuda Médica', component: AyudaMedicaPage },
       { title: 'Usuarios', component: UsuariosPage }
     ];
+
+    this.user_id = this._usuarioService.getId();
+    this._usuarioService.getUser(this.user_id).subscribe(async data => {
+      const info = await data.usuario;
+      this.nombre_usuario = info.nombre + ' ' + info.apellido;
+      console.log(this.nombre_usuario);
+    });
 
   }
 

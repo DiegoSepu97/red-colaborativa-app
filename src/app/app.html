@@ -7,9 +7,10 @@
 
     <ion-content>
         <ion-list>
+            <div class="miperfil" text-center><ion-icon name="md-contact"></ion-icon><p>{{nombre_usuario}}</p></div>
             <button menuClose ion-item text-center class="itemlista" *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+                {{p.title}}
+            </button>
         </ion-list>
     </ion-content>
 
