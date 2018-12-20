@@ -8,9 +8,18 @@ El producto de software "Red Colaborativa Años Dorados" fue realizado pensando 
 ## Instalación
 
 Para instalar y probar la aplicación desde el punto de vista de un desarrollador se requieren las siguientes tecnologías
+
 - Node (npm)
 - Angular
+
+```sh
+$ npm install -g @angular/cli
+```
 - Ionic / Cordova
+
+```sh
+$ sudo npm install -g cordova
+```
 
 **Se recomienda la instalación de las últimas versiones de las tecnologías señaladas**
 
@@ -21,7 +30,7 @@ Luego de la descarga y la instalación de las tecnologías señaladas, se debe e
 $ npm install
 ```
 
-### Ionic cli
+### Ionic CLI
 
 Después, es necesario ejecutar el siguiente comando del ionic cli para que la aplicación pueda ser visible desde el navegador
 
