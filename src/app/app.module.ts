@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -21,6 +22,9 @@ import { InicioPage } from '../pages/inicio/inicio';
 import { ArticuloPage } from '../pages/articulo/articulo';
 import { EventosPage } from '../pages/eventos/eventos';
 
+//Providers
+import { ArticulosProvider } from '../providers/articulos/articulos';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,7 +44,8 @@ import { EventosPage } from '../pages/eventos/eventos';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,6 +66,7 @@ import { EventosPage } from '../pages/eventos/eventos';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ArticulosProvider,
   ]
 })
 export class AppModule {}

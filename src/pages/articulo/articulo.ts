@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { Articulo } from '../../models/articulos';
 
 @Component({
   selector: 'page-articulo',
@@ -7,15 +9,30 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ArticuloPage {
 
-  categoria: string;
-  articulosdif : any[] = new Array;
+  categoria: String;
+  articulos: Articulo[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private _articulosProvider: ArticulosProvider) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ArticuloPage');
+    
+    this.categoria = this.navParams.get('categoria');
+    
+    this._articulosProvider.getArticulos().subscribe(
+      (data) => {
+          const info = data['articulos'];
+          info.forEach(articulo => {
+            if(articulo['categorias'].includes(this.categoria)) this.articulos.push(articulo);
+        });
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ArticuloPage } from '../articulo/articulo';
+import { ArticulosProvider } from '../../providers/articulos/articulos';
+
 
 @Component({
   selector: 'page-ayuda-medica',
@@ -8,17 +10,25 @@ import { ArticuloPage } from '../articulo/articulo';
 })
 export class AyudaMedicaPage {
 
-  articulos: any[];
-  categorias = new Set();
-  categoria: string;
-  id: number;
+  categorias: String[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+  constructor (
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private _articulosProvider: ArticulosProvider) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AyudaMedicaPage');
+    // console.log('ionViewDidLoad AyudaMedicaPage');
+    this._articulosProvider.getCategorias().subscribe(
+      (data) => {
+        this.categorias = data['categorias'];
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 
   abrirArticulo(cat) {

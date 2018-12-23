@@ -1,6 +1,6 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
+    <ion-navbar color="primary" padding>
+        <button ion-button menuToggle icon-start icon-only>
       <ion-icon name="menu"></ion-icon>
     </button>
         <ion-title>Articulo de Ejemplo</ion-title>
@@ -10,8 +10,10 @@
 
 
 <ion-content padding>
-
     <ion-slides pager>
-        
-    </ion-slides>
+        <ion-slide *ngFor="let articulo of articulos">
+          <h2> {{articulo.titulo}} </h2>
+          <p> {{articulo.contenido}} </p>
+        </ion-slide>      
+      </ion-slides>
 </ion-content>

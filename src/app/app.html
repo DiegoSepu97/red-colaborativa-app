@@ -8,7 +8,8 @@
     <ion-content>
         <ion-list>
             <ion-list-header text-center color="primary">
-                   <ion-icon name="md-contact"></ion-icon><p>nombre_usuario</p>
+                   <ion-icon class="usuario" name="md-person"></ion-icon>
+                   <p>nombre_usuario</p>
             </ion-list-header>
             <button menuClose ion-item no-lines text-center detail-none class="itemlista" 
                     *ngFor="let p of pages" (click)="openPage(p)">
