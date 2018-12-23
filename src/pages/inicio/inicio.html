@@ -1,23 +1,34 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title padding>Inicio</ion-title>
+    <ion-navbar color="primary" padding>
+        <button ion-button menuToggle icon-start>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Inicio</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h3 text-center>Página de Inicio</h3>
-    <br><br>
-    <div text-center>
-        <img src="../../assets/imgs/mylogo.png" alt="logo">
-    </div>
-    <button ion-button outline full (click)="cambiaUsuario('5c0529a2d304af12048b86a7')">Usuario 1</button>
-    <button ion-button outline full (click)="cambiaUsuario('5c0529a2d304af12048b86ad')">Usuario 2</button>
-    <button ion-button outline full (click)="cambiaUsuario('5c0529a2d304af12048b86b3')">Usuario 3</button>
-
-
+    <h2 text-center>Nombre del dependiente</h2>
+    <ion-card>
+       <ion-card-header>
+           Eventos
+       </ion-card-header>
+       <ion-list>
+           <ion-item>Dato de Prueba</ion-item>
+           <ion-item>Dato de Prueba</ion-item>
+       </ion-list>
+    </ion-card>
+    <div text-center><button ion-button color="secondary" (click)="abrirEventos()">Ver Eventos</button></div>
+    <ion-card>
+        <ion-card-header>
+            Medicamentos
+        </ion-card-header>
+        <ion-list>
+            <ion-item>Dato de Prueba</ion-item>
+            <ion-item>Dato de Prueba</ion-item>
+        </ion-list>
+    </ion-card>
+    <div text-center><button ion-button color="secondary" (click)="abrirRemedios()">Ver Medicamentos</button></div>
 </ion-content>
 
 <ion-footer>

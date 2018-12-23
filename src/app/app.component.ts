@@ -3,15 +3,12 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { ListPage } from '../pages/list/list';
 import { AyudaMedicaPage } from '../pages/ayuda-medica/ayuda-medica';
 import { NotasPage } from '../pages/notas/notas';
 import { RemediosPage } from '../pages/remedios/remedios';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { InicioPage } from '../pages/inicio/inicio';
 import { EventosPage } from '../pages/eventos/eventos';
-import { UsuarioServiceProvider } from '../providers/usuario-service/usuario-service';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -27,26 +24,17 @@ export class MyApp {
 
   nombre_usuario: string;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private _usuarioService: UsuarioServiceProvider) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: InicioPage },
       { title: 'Notas', component: NotasPage },
       { title: 'Eventos', component: EventosPage },
-      { title: 'Remedios', component: RemediosPage },
+      { title: 'Medicamentos', component: RemediosPage },
       { title: 'Ayuda Médica', component: AyudaMedicaPage },
       { title: 'Usuarios', component: UsuariosPage }
     ];
-
-    this.user_id = this._usuarioService.getId();
-    this._usuarioService.getUser(this.user_id).subscribe(async data => {
-      const info = await data.usuario;
-      this.nombre_usuario = info.nombre + ' ' + info.apellido;
-      console.log(this.nombre_usuario);
-    });
-
   }
 
   initializeApp() {
@@ -61,7 +49,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component, {id: this._usuarioService.getId()});
+    this.nav.setRoot(page.component);
   }
 
 }

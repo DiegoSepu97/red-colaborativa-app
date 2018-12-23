@@ -1,19 +1,21 @@
 <ion-menu [content]="content">
     <ion-header>
-        <ion-toolbar>
-            <ion-title class="titulo" padding text-center> Menú </ion-title>
-        </ion-toolbar>
+        <!-- <ion-toolbar padding color="primary">
+            <ion-title padding text-center> Menú </ion-title>
+        </ion-toolbar> -->
     </ion-header>
 
     <ion-content>
         <ion-list>
-            <div class="miperfil" text-center><ion-icon name="md-contact"></ion-icon><p>{{nombre_usuario}}</p></div>
-            <button menuClose ion-item text-center class="itemlista" *ngFor="let p of pages" (click)="openPage(p)">
+            <ion-list-header text-center color="primary">
+                   <ion-icon name="md-contact"></ion-icon><p>nombre_usuario</p>
+            </ion-list-header>
+            <button menuClose ion-item no-lines text-center detail-none class="itemlista" 
+                    *ngFor="let p of pages" (click)="openPage(p)">
                 {{p.title}}
             </button>
         </ion-list>
     </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

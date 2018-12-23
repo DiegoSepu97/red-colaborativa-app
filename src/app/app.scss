@@ -17,6 +17,7 @@ html {
     font-size: 15px;
 }
 
+
 .accesosrapidos {
     font-size: 22px;
     padding: 30px;
@@ -26,8 +27,14 @@ html {
     color: #f0f0f0;
 }
 
+
 .itemlista {
     background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.list-header {
+    margin: 0px;
 }
 
 .toolbar-title {
@@ -38,16 +45,9 @@ html {
     color: #f0f0f0;
 }
 
-.titulo {
-    background-color: #1d77ba;
-}
 
 .toolbar {
     padding: 0px;
-}
-
-.toolbar-background {
-    background-color: #1d77ba;
 }
 
 .bar-button-default-md,

@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <button ion-button menuToggle>
+        <button ion-button menuToggle color="primary" padding>
       <ion-icon name="menu"></ion-icon>
     </button>
         <ion-title>Usuarios</ion-title>
@@ -10,21 +10,4 @@
 
 <ion-content padding>
 
-    <ion-card>
-        <ion-item text-center>
-            <img style="width: 100px; margin: 0 auto;" src="../../assets/imgs/person-icon.png" alt="profile-pic">
-            <h2>{{ apoderado?.nombre + " " + apoderado?.apellido}}</h2>
-            <p>Apoderado</p>
-        </ion-item>
-    </ion-card>
-
-    <ion-card *ngFor="let cuidador of cuidadores">
-        <ion-item>
-            <ion-avatar item-start>
-                <img src="../../assets/imgs/person-icon.png" alt="profile-pic">
-            </ion-avatar>
-            <h2>{{ cuidador?.nombre + " " + cuidador?.apellido}}</h2>
-            <p>Cuidador</p>
-        </ion-item>
-    </ion-card>
 </ion-content>

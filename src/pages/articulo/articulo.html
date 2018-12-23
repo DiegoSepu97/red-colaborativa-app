@@ -12,12 +12,6 @@
 <ion-content padding>
 
     <ion-slides pager>
-        <ion-slide *ngFor="let articulo of articulosdif">
-            <h2>{{ articulo.titulo | titlecase }}</h2>
-            <p text-center>{{ articulo.contenido}}</p>
-            <div text-right>
-                <small *ngFor="let categoria of articulo.categorias">{{ categoria | titlecase }} <br></small>
-            </div>
-        </ion-slide>
+        
     </ion-slides>
 </ion-content>

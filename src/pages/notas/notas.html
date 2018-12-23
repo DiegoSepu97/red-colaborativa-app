@@ -1,6 +1,6 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
+    <ion-navbar color="primary" padding>
+        <button ion-button menuToggle icon-start>
             <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>Notas</ion-title>
@@ -9,13 +9,7 @@
 
 
 <ion-content padding>
-    <ion-card *ngFor="let nota of notas" [className]="nota.tipo">
-        <ion-card-content>
-            {{ nota.texto }}
-            <br><br>
-            <small float-right> {{nota.stamp_agregada | date}} </small>
-        </ion-card-content>
-    </ion-card>
+    
 </ion-content>
 
 <ion-footer>

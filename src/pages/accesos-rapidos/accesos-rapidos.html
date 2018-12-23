@@ -1,8 +1,8 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <ion-navbar color="primary" padding>
+        <button ion-button menuToggle icon-start icon-only>
+            <ion-icon name="menu"></ion-icon>
+        </button>
         <ion-title>Accesos Rápidos</ion-title>
     </ion-navbar>
 
@@ -11,21 +11,4 @@
 
 <ion-content padding>
 
-    <ion-card *ngFor="let contacto of contactos">
-        <ion-card-header text-center style="white-space: normal">
-            {{ contacto.nombre }}
-        </ion-card-header>
-        <ion-card-content text-center>
-            <div class="telefono" *ngIf="contacto.hasOwnProperty('telefono')">
-                {{ contacto.telefono }}
-                <br>
-                <button ion-button icon-start><ion-icon name="md-call"></ion-icon>Llamar</button>
-            </div>
-            <div class="direccion" *ngIf="contacto.hasOwnProperty('direccion')">
-                {{ contacto.direccion }}
-                <br>
-                <button ion-button icon-start><ion-icon name="md-map"></ion-icon>Ver en Maps</button>
-            </div>
-        </ion-card-content>
-    </ion-card>
 </ion-content>
