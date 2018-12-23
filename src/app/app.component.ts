@@ -9,14 +9,16 @@ import { RemediosPage } from '../pages/remedios/remedios';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { InicioPage } from '../pages/inicio/inicio';
 import { EventosPage } from '../pages/eventos/eventos';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = InicioPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

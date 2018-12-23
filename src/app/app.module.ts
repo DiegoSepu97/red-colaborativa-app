@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http'
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AngularFireModule } from '@angular/fire';
 
 import { MyApp } from './app.component';
 
@@ -24,6 +25,12 @@ import { EventosPage } from '../pages/eventos/eventos';
 
 //Providers
 import { ArticulosProvider } from '../providers/articulos/articulos';
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
+
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginPage } from '../pages/login/login';
+
+import { firebase } from '../providers/firebase';
 
 @NgModule({
   declarations: [
@@ -39,13 +46,16 @@ import { ArticulosProvider } from '../providers/articulos/articulos';
     InicioPage,
     FooterComponent,
     ArticuloPage,
-    EventosPage
+    EventosPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebase),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,13 +70,15 @@ import { ArticulosProvider } from '../providers/articulos/articulos';
     InicioPage,
     UsuariosPage,
     ArticuloPage,
-    EventosPage
+    EventosPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ArticulosProvider,
+    UsuariosProvider,
   ]
 })
 export class AppModule {}
