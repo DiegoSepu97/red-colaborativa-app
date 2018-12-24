@@ -11,6 +11,10 @@
 
 <ion-content padding>
 
+    <ion-card *ngFor="let remedio of remedios">
+        <ion-card-title> {{remedio.nombre}} </ion-card-title>
+        {{remedio.descripcion}}
+    </ion-card>
 </ion-content>
 
 <ion-footer>

@@ -9,7 +9,7 @@
         <ion-list>
             <ion-list-header text-center color="primary">
                    <ion-icon class="usuario" name="md-person"></ion-icon>
-                   <p>nombre_usuario</p>
+                   <p>{{ nombreUsuario }}</p>
             </ion-list-header>
             <button menuClose ion-item no-lines text-center detail-none class="itemlista" 
                     *ngFor="let p of pages" (click)="openPage(p)">

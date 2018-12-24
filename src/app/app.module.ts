@@ -31,6 +31,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginPage } from '../pages/login/login';
 
 import { firebase } from '../providers/firebase';
+import { DependienteProvider } from '../providers/dependiente/dependiente';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { firebase } from '../providers/firebase';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ArticulosProvider,
     UsuariosProvider,
+    DependienteProvider,
   ]
 })
 export class AppModule {}

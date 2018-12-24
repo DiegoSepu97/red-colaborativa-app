@@ -8,14 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-    <h2 text-center>Nombre del dependiente</h2>
+    <h2 text-center>{{ nombre_dependiente }}</h2>
     <ion-card>
        <ion-card-header>
            Eventos
        </ion-card-header>
        <ion-list>
-           <ion-item>Dato de Prueba</ion-item>
-           <ion-item>Dato de Prueba</ion-item>
+           <ion-item *ngFor="let evento of eventos"> {{ evento.titulo }} </ion-item>
        </ion-list>
     </ion-card>
     <div text-center><button ion-button color="secondary" (click)="abrirEventos()">Ver Eventos</button></div>
@@ -24,8 +23,7 @@
             Medicamentos
         </ion-card-header>
         <ion-list>
-            <ion-item>Dato de Prueba</ion-item>
-            <ion-item>Dato de Prueba</ion-item>
+            <ion-item *ngFor="let medicina of medicinas"> {{ medicina.nombre }} </ion-item>
         </ion-list>
     </ion-card>
     <div text-center><button ion-button color="secondary" (click)="abrirRemedios()">Ver Medicamentos</button></div>

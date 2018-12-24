@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { DependienteProvider } from '../../providers/dependiente/dependiente';
 
 @Component({
   selector: 'page-remedios',
@@ -7,16 +8,23 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RemediosPage {
 
-  id_usuario: string;
-  id_dependiente: string;
-  remedios : string[] = new Array;
+  remedios : string[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private _dependienteProvider: DependienteProvider) {
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RemediosPage');
+    this._dependienteProvider.getMedicinasByDependiente().subscribe(
+      (data: any) => {
+        this.remedios = data.medicinas;
+      },
+      (error) => {
+        console.error(error)
+      }
+    );
   }
 
 }

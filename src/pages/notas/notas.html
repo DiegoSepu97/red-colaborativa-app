@@ -10,6 +10,10 @@
 
 <ion-content padding>
     
+    <ion-card *ngFor="let nota of notas" class="{{ nota.tipo }}">
+        {{ nota.texto }}
+    </ion-card>
+
 </ion-content>
 
 <ion-footer>

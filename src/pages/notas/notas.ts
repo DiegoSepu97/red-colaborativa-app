@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { DependienteProvider } from '../../providers/dependiente/dependiente';
 
 @Component({
   selector: 'page-notas',
@@ -7,16 +8,23 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class NotasPage {
   
-  id_usuario: string;
-  id_dependiente: string;
-  notas: any[] = new Array;
+  notas: any[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private _dependienteProvider: DependienteProvider) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotasPage');
+    this._dependienteProvider.getNotasByDependiente().subscribe(
+      (data: any) => {
+        this.notas = data.notas; 
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }

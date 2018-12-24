@@ -10,6 +10,12 @@
 
 <ion-content padding>
     
+    <ion-card *ngFor="let evento of eventos">
+        <ion-card-title> {{ evento.titulo }} </ion-card-title>
+        {{ evento.descripcion }}
+        <small>{{ evento.fecha }}</small>
+    </ion-card>
+
 </ion-content>
 
 <ion-footer>

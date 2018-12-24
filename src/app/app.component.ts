@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -10,6 +10,7 @@ import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { InicioPage } from '../pages/inicio/inicio';
 import { EventosPage } from '../pages/eventos/eventos';
 import { LoginPage } from '../pages/login/login';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,12 +23,15 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  user_id: string;
+  nombreUsuario: string;
 
-  nombre_usuario: string;
+  constructor(public platform: Platform, 
+              public statusBar: StatusBar, 
+              public splashScreen: SplashScreen,
+              private events: Events) {
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
+    this.nombreUsuario = "";
 
     this.pages = [
       { title: 'Inicio', component: InicioPage },
@@ -37,6 +41,12 @@ export class MyApp {
       { title: 'Ayuda Médica', component: AyudaMedicaPage },
       { title: 'Usuarios', component: UsuariosPage }
     ];
+
+    events.subscribe('username:changed', username => {
+      if(username !== undefined && username !== ""){
+        this.nombreUsuario = username;
+      }
+    })
   }
 
   initializeApp() {
