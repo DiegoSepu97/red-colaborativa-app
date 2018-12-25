@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -36,6 +36,14 @@ export class DependienteProvider {
 
   public getLugaresByDependiente() {
     return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/lugares");
+  }
+
+  public postNota(nota) {
+    let body = JSON.stringify(nota);
+    let headers = new HttpHeaders({
+      'Content-Type':  'application/json'
+    });
+    return this.http.post("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas", body, { headers });
   }
 
 }
