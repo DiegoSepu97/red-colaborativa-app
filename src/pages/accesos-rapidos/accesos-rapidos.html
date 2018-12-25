@@ -8,7 +8,17 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <h3>Contactos</h3>
+    <ion-card *ngFor="let contacto of contactos">
+        <ion-card-header> {{contacto.nombre}} </ion-card-header>
+        <p *ngIf="contacto.telefono"> {{contacto.telefono}} </p>
+        <p *ngIf="contacto.direccion"> {{contacto.direccion}} </p>
+    </ion-card>
+    <h3>Lugares de interés</h3>
+    <ion-card *ngFor="let lugar of lugares">
+        <ion-card-header> {{lugar.nombre}} </ion-card-header>
+        <p *ngIf="lugar.telefono"> {{lugar.telefono}} </p>
+        <p *ngIf="lugar.direccion"> {{lugar.direccion}} </p>
+    </ion-card>
 </ion-content>

@@ -32,6 +32,7 @@ import { LoginPage } from '../pages/login/login';
 
 import { firebase } from '../providers/firebase';
 import { DependienteProvider } from '../providers/dependiente/dependiente';
+import { NuevaNotaPage } from '../pages/nueva-nota/nueva-nota';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { DependienteProvider } from '../providers/dependiente/dependiente';
     FooterComponent,
     ArticuloPage,
     EventosPage,
-    LoginPage
+    LoginPage,
+    NuevaNotaPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { DependienteProvider } from '../providers/dependiente/dependiente';
     UsuariosPage,
     ArticuloPage,
     EventosPage,
-    LoginPage
+    LoginPage,
+    NuevaNotaPage
   ],
   providers: [
     StatusBar,

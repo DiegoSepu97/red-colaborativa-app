@@ -30,4 +30,12 @@ export class DependienteProvider {
     return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas")
   }
 
+  public getContactosByDependiente() {
+    return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/contactos");
+  }
+
+  public getLugaresByDependiente() {
+    return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/lugares");
+  }
+
 }

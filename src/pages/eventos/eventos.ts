@@ -15,9 +15,6 @@ export class EventosPage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private _dependienteProvider: DependienteProvider) {
-
-                this.id_dependiente = this.navParams.get("id");
-                console.log(this.id_dependiente);
   }
 
   ionViewDidLoad() {

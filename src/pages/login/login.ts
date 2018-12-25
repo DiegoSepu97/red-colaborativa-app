@@ -3,6 +3,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { InicioPage } from '../inicio/inicio';
 import { DependienteProvider } from '../../providers/dependiente/dependiente';
+import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 
 @Component({
   selector: 'page-login',
@@ -17,7 +18,8 @@ export class LoginPage {
               public navParams: NavParams, 
               private afauth: AngularFireAuth, 
               private alertCtrl: AlertController,
-              private _dependienteProvider: DependienteProvider) {
+              private _dependienteProvider: DependienteProvider,
+              private _usuarioProvider: UsuariosProvider) {
   }
 
   alerta(user, msj) {
@@ -27,8 +29,9 @@ export class LoginPage {
       buttons: [{
         text: 'OK',
         handler: () => {
-          this._dependienteProvider.setDependiente("5c0c8deba88d2d1f24da64b9"); // agregar funcionalidad para que, dependiendo del usuario que se haya registrado se elija el id del dependiente que corresponda
-          this.navCtrl.setRoot(InicioPage);
+          this._usuarioProvider.setUsuario("5c0c8deaa88d2d1f24da64ad").then(() => {
+            this.navCtrl.setRoot(InicioPage);
+          })
         }
       }]
     });

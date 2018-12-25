@@ -46,7 +46,7 @@ export class MyApp {
       if(username !== undefined && username !== ""){
         this.nombreUsuario = username;
       }
-    })
+    });
   }
 
   initializeApp() {

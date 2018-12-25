@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DependienteProvider } from '../../providers/dependiente/dependiente';
+import { NuevaNotaPage } from '../nueva-nota/nueva-nota';
 
 @Component({
   selector: 'page-notas',
@@ -27,4 +28,7 @@ export class NotasPage {
     );
   }
 
+  public nuevaNota() {
+    this.navCtrl.push(NuevaNotaPage);
+  }
 }

@@ -4,6 +4,8 @@ import { RemediosPage } from '../remedios/remedios';
 import { EventosPage } from '../eventos/eventos';
 import { Dependiente } from '../../models/dependiente';
 import { DependienteProvider } from '../../providers/dependiente/dependiente';
+import { Usuario } from '../../models/usuario';
+import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 
 @Component({
   selector: 'page-inicio',
@@ -12,27 +14,29 @@ import { DependienteProvider } from '../../providers/dependiente/dependiente';
 export class InicioPage {
 
   dependiente: Dependiente;
-  nombre_dependiente: string = "";
+  usuario: Usuario;
   eventos: any[] = [];
   medicinas: any[] = [];
-  apoderado: string;
+  nombre_dependiente: string;
+  nombre_usuario : string;
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private events: Events,
-              private _dependienteProvider: DependienteProvider) {
+              private _dependienteProvider: DependienteProvider,
+              private _usuarioProvider: UsuariosProvider) {
   }
 
   ionViewDidLoad() {
-    
     this._dependienteProvider.getDependiente().subscribe(
       (data: any) => {
         this.dependiente = data.dependiente;
         this.eventos = this.dependiente.eventos;
         this.medicinas = this.dependiente.medicinas;
-        this.apoderado = this.dependiente.apoderado.nombre + " " + this.dependiente.apoderado.apellido;
-        this.events.publish('username:changed', this.apoderado);
-        this.nombre_dependiente = this.dependiente.nombre + " " + this.dependiente.apellido;
+        this.usuario = this._usuarioProvider.usuario;
+        this.nombre_usuario = this.usuario.nombre + ' ' + this.usuario.apellido;
+        this.events.publish('username:changed', this.nombre_usuario);
+        this.nombre_dependiente = this.dependiente.nombre + ' ' + this.dependiente.apellido;
       },
       (error) => {
         console.error(error);
