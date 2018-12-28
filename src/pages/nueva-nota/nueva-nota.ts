@@ -11,6 +11,7 @@ import { NotasPage } from '../notas/notas';
 export class NuevaNotaPage {
 
   textoNota: string;
+  tipoNota: string;
 
   usuario: {
     _id: string;
@@ -59,7 +60,7 @@ export class NuevaNotaPage {
 
     this.info.data.autor = this.usuario;
     this.info.data.texto = this.textoNota;
-    this.info.data.tipo = "Roja";
+    this.info.data.tipo = this.tipoNota;
     this._dependienteProvider.postNota(this.info).subscribe(
       (data) => {
         // console.log(data);

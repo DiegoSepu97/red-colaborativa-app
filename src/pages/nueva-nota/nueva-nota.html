@@ -11,6 +11,14 @@
     <ion-label stacked>Escriba la nota que desee</ion-label>
     <ion-textarea rows="5" [(ngModel)]="textoNota"></ion-textarea>
   </ion-item>
+  <ion-item>
+    <ion-label>Tipo de Nota</ion-label>
+      <ion-select [(ngModel)]="tipoNota">
+      <ion-option value="Verde">Informativa</ion-option>
+      <ion-option value="Amarilla">Aviso</ion-option>
+      <ion-option value="Roja">Muy Importante</ion-option>
+    </ion-select>
+  </ion-item>
   <hr>
   <div text-center><button ion-button color="secondary" (click)="nuevaNota()">Guardar Nota</button></div>
 
