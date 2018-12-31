@@ -11,9 +11,10 @@
 
 <ion-content padding>
 
-    <ion-card *ngFor="let remedio of remedios">
-        <ion-card-title> {{remedio.nombre}} </ion-card-title>
-        {{remedio.descripcion}}
+    <ion-card *ngFor="let remedio of remedios" class="tarjeta">
+        <ion-card-title text-center> {{remedio.nombre}} </ion-card-title>
+        
+        <p>{{remedio.descripcion}}</p>
     </ion-card>
 </ion-content>
 

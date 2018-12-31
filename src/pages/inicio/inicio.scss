@@ -1,3 +1,18 @@
 img {
     width: 300px;
 }
+
+.eventosInicio, .medicamentosInicio {
+    border: 1px solid;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.eventosInicio .card-header, .medicamentosInicio .card-header {
+    font-size: 30px;
+}
+
+.eventosInicio .list, .medicamentosInicio .list {
+    border-top: 2px solid;
+}

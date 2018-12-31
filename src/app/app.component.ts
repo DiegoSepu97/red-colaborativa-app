@@ -38,8 +38,8 @@ export class MyApp {
       { title: 'Notas', component: NotasPage },
       { title: 'Eventos', component: EventosPage },
       { title: 'Medicamentos', component: RemediosPage },
-      { title: 'Ayuda Médica', component: AyudaMedicaPage },
-      { title: 'Usuarios', component: UsuariosPage }
+      { title: 'Ayuda Médica', component: AyudaMedicaPage }
+      // { title: 'Usuarios', component: UsuariosPage }
     ];
 
     events.subscribe('username:changed', username => {

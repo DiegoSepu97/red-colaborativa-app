@@ -9,16 +9,16 @@
 </ion-header>
 
 <ion-content padding>
-    <h3>Contactos</h3>
-    <ion-card *ngFor="let contacto of contactos">
-        <ion-card-header> {{contacto.nombre}} </ion-card-header>
-        <p *ngIf="contacto.telefono"> {{contacto.telefono}} </p>
-        <p *ngIf="contacto.direccion"> {{contacto.direccion}} </p>
+    <h3 text-center>Contactos</h3>
+    <ion-card *ngFor="let contacto of contactos" class="tarjeta">
+        <ion-card-header text-center> {{contacto.nombre}} </ion-card-header>
+        <p *ngIf="contacto.telefono" icon-start text-center><ion-icon name="call"></ion-icon> {{contacto.telefono}} </p>
+        <p *ngIf="contacto.direccion" icon-start text-center><ion-icon name="md-home"></ion-icon> {{contacto.direccion}} </p>
     </ion-card>
-    <h3>Lugares de interés</h3>
-    <ion-card *ngFor="let lugar of lugares">
-        <ion-card-header> {{lugar.nombre}} </ion-card-header>
-        <p *ngIf="lugar.telefono"> {{lugar.telefono}} </p>
-        <p *ngIf="lugar.direccion"> {{lugar.direccion}} </p>
+    <h3 text-center>Lugares de interés</h3>
+    <ion-card *ngFor="let lugar of lugares" class="tarjeta">
+        <ion-card-header text-center> {{lugar.nombre}} </ion-card-header>
+        <p *ngIf="lugar.telefono" icon-start text-center><ion-icon name="call"></ion-icon> {{lugar.telefono}} </p>
+        <p *ngIf="lugar.direccion" icon-start text-center><ion-icon name="md-home"></ion-icon> {{lugar.direccion}} </p>
     </ion-card>
 </ion-content>
