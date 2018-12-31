@@ -1,3 +1,19 @@
+.notaConTipo {
+    padding: 15px;
+    outline: 2px solid #000;
+    outline-offset: -10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.verNota.button-md {
+    font-size: 10px;
+    font-weight: bold;
+    background-color: rgb(221, 221, 221);
+    padding: 10px 20px 10px 20px;
+    height: initial;
+}
+
 .Amarilla {
     background-color: #fcec2c;
 }

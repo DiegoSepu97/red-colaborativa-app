@@ -1,12 +1,35 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>nota</ion-title>
-  </ion-navbar>
+  <ion-navbar color="primary" padding>
+    <button ion-button menuToggle icon-start>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Nota</ion-title>
+</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+<h3 text-center>Nota</h3>
+
+<ion-item>
+    <ion-label stacked>Puede editar la nota:</ion-label>
+    <ion-textarea rows="5" [(ngModel)]="textoNota"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo de Nota</ion-label>
+      <ion-select [(ngModel)]="tipoNota">
+      <ion-option value="Verde">Informativa</ion-option>
+      <ion-option value="Amarilla">Aviso</ion-option>
+      <ion-option value="Roja">Muy Importante</ion-option>
+    </ion-select>
+  </ion-item>
+  <hr>
+  <div text-center><button ion-button color="secondary" (click)="guardarNota(id_nota)">Guardar Nota</button></div>
+  <ion-fab bottom right>
+    <button ion-fab color="danger" (click)="borrarNota(id_nota)"><ion-icon name="trash"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>

@@ -30,6 +30,22 @@ export class DependienteProvider {
     return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas")
   }
 
+  public getNotaById(id_nota) {
+    return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas/" + id_nota)
+  }
+
+  public putNotaById(nota, id_nota) {
+    let body = JSON.stringify(nota);
+    let headers = new HttpHeaders({
+      'Content-Type':  'application/json'
+    });
+    return this.http.put("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas/" + id_nota, body, { headers });
+  }
+
+  public deleteNotaById(id_nota) {
+    return this.http.delete("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/notas/" + id_nota);
+  }
+
   public getContactosByDependiente() {
     return this.http.get("https://proyecto-is-beta-1.herokuapp.com/dependientes/" + this.id_dependiente + "/contactos");
   }

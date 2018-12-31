@@ -10,8 +10,11 @@
 
 <ion-content padding>
     
-    <ion-card *ngFor="let nota of notas" class="{{ nota.tipo }}">
+    <ion-card *ngFor="let nota of notas" class="notaConTipo {{ nota.tipo }}" text-center>
         {{ nota.texto }}
+        <div text-center>
+            <button ion-button color="light" class="verNota" (click)="verNota(nota._id)" >Ver</button>
+        </div>
     </ion-card>
 
     <ion-fab bottom right>
